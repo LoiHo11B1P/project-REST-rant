@@ -17,14 +17,18 @@ function show (data, id) {
                         <h3>Description</h3>
                         <p>{ `Locate in ${data.place.city}, ${data.place.state} and serving ${data.place.cuisines}`}</p>
                         <div className='row'>
-                        <a href={`/places/${data.id}/edit`} className="btn btn-warning col-2"> 
-                            Edit
-                        </a>     
-                        <form method="POST" action={`/places/${data.id}?_method=DELETE`}> 
-                            <button type="submit" className="btn btn-danger">
-                                Delete
-                            </button>
-                        </form>
+                            <div className="col-12 py-3">
+                            <a href={`/places/${data.id}/edit`} className="btn btn-warning col-2"> 
+                                Edit
+                            </a>     
+                            <form className='py-3' method="POST" action={`/places/${data.id}?_method=DELETE`}> 
+                                <button type="submit" className="btn btn-danger">
+                                <i className="bi bi-pen-fill"></i>
+                                <span className="bi-search"></span>
+                                    Delete
+                                </button>
+                            </form>
+                            </div>
                         </div>
                     </div>
                     

@@ -1,6 +1,7 @@
 const React = require('react');
 
 function Def (html) {
+    let nextYear = new Date().getFullYear()+1
     return (
         <html>
             <head>
@@ -24,6 +25,9 @@ function Def (html) {
                     </ul>
                 </nav>
                 {html.children}
+                <footer className='d-flex justify-content-center align-items-center'>
+                    <h3>Copyright Vinh Pham 2021-{ nextYear }</h3>
+                </footer>
             </body>
         </html>
     )

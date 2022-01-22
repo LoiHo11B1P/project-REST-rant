@@ -5,7 +5,7 @@ function index (data) {
     let placeFormatted = data.places.map((place, index) => {
         return (
             
-            <div className='col-sm-6 text-center' key={place.name}>
+            <div className='col-sm-6 text-center pt-5' key={place.name}>
                 <h2>
                     <a href={`/places/${index}`}>
                         {place.name}
@@ -23,13 +23,13 @@ function index (data) {
     })
     return (
         <Def>
-            <main className='container'>
+            <main className='container-fluid py-5'>
                 <h1>Places to Rant or Rave About</h1>
                 <div className='row'>
                     {placeFormatted}
                 </div>
-                <a href='/places/new'>
-                    <button className='btn btn-info'>New Place</button>
+                <a href='/places/new' >
+                    <button className='btn btn-info bt-5'>New Place</button>
                 </a>
             </main>
         </Def>
