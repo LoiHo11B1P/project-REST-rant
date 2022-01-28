@@ -8,6 +8,9 @@ function show (data, id) {
                 <div className='row'>
                     <div className='col'>
                         <img width={'400em'} height={'400em'} src={'../'+data.place.pic} alt={ data.place.name}></img>
+                        <h3>
+                            Locate in {data.place.city}, {data.place.state}
+                        </h3>
                     </div>
                     <div className='col'>
                         <h1>{ data.place.name }</h1>
@@ -15,7 +18,11 @@ function show (data, id) {
                         <h3>Rating</h3>
                         <p>Not Rated</p>
                         <h3>Description</h3>
-                        <p>{ `Locate in ${data.place.city}, ${data.place.state} and serving ${data.place.cuisines}`}</p>
+                        <h3>
+                            {data.place.showEstablished()}
+                        </h3>
+
+                        <h4>Serving {data.place.cuisines}</h4>
                         <div className='row'>
                             <div className="col-12 py-3">
                             <a href={`/places/${data.id}/edit`} className="btn btn-warning col-2"> 
