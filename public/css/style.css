@@ -1,5 +1,5 @@
 body {
-  
+  min-height: 100%;
   text-align: center;
 }
 
@@ -42,7 +42,7 @@ footer {
   background-color: black;
   color: white;
   height: 10em;
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
 }

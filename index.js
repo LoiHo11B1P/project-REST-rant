@@ -12,6 +12,7 @@ app.use(methodOverride('_method'))
 
 // Specific controller to handle routing and api call
 app.use('/places', require('./controllers/places'))
+//app.use('/comments', require('./controllers/comments'))
 
 app.get('/', (req, res) => {
     res.render('home');
