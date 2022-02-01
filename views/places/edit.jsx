@@ -6,31 +6,31 @@ function edit_form (data) {
         <Def>
             <main className='container'>
                 <h1>Edit Place</h1>
-            <form method="POST" action={`/places/${data.id}?_method=PUT`}>
+            <form method="POST" action={`/places/${data.place.id}/edit?_method=PUT`}>
             <div className='row'>
                         <div className="form-group col-sm-6">
                             <label htmlFor="name">Place Name</label>
-                            <input className="form-control" value={data.place.name} id="name" name="name" required />
+                            <input className="form-control" defaultValue={data.place.name} id="name" name="name" required />
                         </div>
                         <div className="form-group col-sm-6">
                             <label htmlFor="pic">Place Picture</label>
-                            <input className="form-control" value={data.place.pic} id="pic" name="pic" />
+                            <input className="form-control" defaultValue={data.place.pic} id="pic" name="pic" />
                         </div>
                     </div>
                     <div className='row'>
                         <div className="form-group col-sm-6">
                             <label htmlFor="city">City</label>
-                            <input className="form-control" value={data.place.city} id="city" name="city" />
+                            <input className="form-control" defaultValue={data.place.city} id="city" name="city" />
                         </div>
                         <div className="form-group col-sm-6">
                             <label htmlFor="state">State</label>
-                            <input className="form-control" value={data.place.state} id="state" name="state" />
+                            <input className="form-control" defaultValue={data.place.state} id="state" name="state" />
                         </div>
                     </div>
                     <div className='row mt-2'>
                         <div className="form-group">
                             <label htmlFor="cuisines">Cuisines</label>
-                            <input className="form-control" value={data.place.cuisines} id="cuisines" name="cuisines" required />
+                            <input className="form-control" defaultValue={data.place.cuisines} id="cuisines" name="cuisines" required />
                         </div>
                     </div>
                     <div className='row'> 

@@ -71,15 +71,18 @@ router.delete('/:id', (req, res) => {
 })
 
 router.get('/:id/edit', (req, res) => {
-  res.send('GET edit form stub')
+  db.Place.findById(req.params.id)
+  .then(place => {
+    res.render('places/edit', {place})
+  })
+  
 })
 
-router.post('/:id/rant', (req, res) => {
-  res.send('GET /places/:id/rant stub')
-})
-
-router.delete('/:id/rant/:rantId', (req, res) => {
-    res.send('GET /places/:id/rant/:rantId stub')
+// EDIT Place
+router.put('/:id/edit', async(req, res) => {
+  const updatePlace = await db.Place.findByIdAndUpdate(req.params.id, req.body, { new: true })
+  console.log(updatePlace)
+  res.redirect(`/places/${req.params.id}`)
 })
 
 module.exports = router

@@ -25,7 +25,7 @@ function show (data, id) {
             <main className='container p-5' >
                 <div className='row'>
                     <div className='col'>
-                        <img width={'400em'} height={'400em'} src={'../'+data.place.pic} alt={ data.place.name}></img>
+                        <img width={'400em'} height={'400em'} src={data.place.pic} alt={ data.place.name}></img>
                         <h3>
                             Locate in {data.place.city}, {data.place.state}
                         </h3>
