@@ -3,11 +3,36 @@ const Def = require('../default');
 
 function show (data, id) {
     let comments = (
-        <h3 className='inactive'>No comments yet!</h3>
-       
+        <h3 className='inactive'>
+            No comments yet!
+        </h3>
+    )
+    let rating = (
+        <h3 className='inactive'>
+            Not yet rated
+        </h3>
     )
     if (data.place.comments.length) {
-          comments = data.place.comments.map(c => {
+
+            let sumRatings =  data.place.comments.reduce((tot, c) => {
+                return tot + c.stars
+            }, 0)
+
+            let averageRating = Math.round(sumRatings / data.place.comments.length)
+
+            let stars = ''
+
+            for(let i = 0; i < averageRating; i++) {
+                stars += '⭐'
+            }
+
+            rating = (
+                <h3>
+                    { stars }
+                </h3>
+            )
+
+            comments = data.place.comments.map(c => {
             return (
               <div className="border" key={c.id}>
                 <h2 className="rant">{c.rant ? 'Rant! 😡' : 'Rave! 😻'}</h2>
@@ -34,7 +59,7 @@ function show (data, id) {
                         <h1>{ data.place.name }</h1>
                         <br></br>
                         <h3>Rating</h3>
-                        <p>Not Rated</p>
+                        {rating}
                         <h3>Description</h3>
                         <h3>
                             {data.place.showEstablished()}
